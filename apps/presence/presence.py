@@ -36,7 +36,7 @@ class Presence(hass.Hass):
         
     
     def update_no_motion(self, entity):
-        self.currently_detecting.remove(entity)
+        self.currently_detecting.discard(entity)
         if len(self.currently_detecting) == 1:
             self.last_detected = self.currently_detecting.pop()
             self.currently_detecting.add(self.last_detected)
