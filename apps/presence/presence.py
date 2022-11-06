@@ -19,7 +19,7 @@ class Presence(hass.Hass):
         self.last_detected = None
         self.home = False
         self.presence_updated(None, None, None, None, None)
-        self.currently_detecting = {}
+        self.currently_detecting = set()
         
     def set(self, sensor, state):
         self.set_state(self.output_map[sensor], state = state)
